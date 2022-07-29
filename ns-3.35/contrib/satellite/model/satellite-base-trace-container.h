@@ -42,42 +42,42 @@ public:
   /**
    * \brief Default Rx power density index for Rx power traces
    */
-  static const uint32_t RX_POWER_TRACE_DEFAULT_RX_POWER_DENSITY_INDEX = 1;
+  const uint32_t RX_POWER_TRACE_DEFAULT_RX_POWER_DENSITY_INDEX = 1;
 
   /**
    * \brief Default Rx power density index for Rx power traces
    */
-  static const uint32_t RX_POWER_TRACE_DEFAULT_NUMBER_OF_COLUMNS = 2;
+  const uint32_t RX_POWER_TRACE_DEFAULT_NUMBER_OF_COLUMNS = 2;
 
   /**
    * \brief Default interference density index for interference traces
    */
-  static const uint32_t INTF_TRACE_DEFAULT_INTF_DENSITY_INDEX = 1;
+  const uint32_t INTF_TRACE_DEFAULT_INTF_DENSITY_INDEX = 1;
 
   /**
    * \brief Default number of columns for interference traces
    */
-  static const uint32_t INTF_TRACE_DEFAULT_NUMBER_OF_COLUMNS = 2;
+  const uint32_t INTF_TRACE_DEFAULT_NUMBER_OF_COLUMNS = 2;
 
   /**
    * \brief Default fading value index for fading traces
    */
-  static const uint32_t FADING_TRACE_DEFAULT_FADING_VALUE_INDEX = 1;
+  const uint32_t FADING_TRACE_DEFAULT_FADING_VALUE_INDEX = 1;
 
   /**
    * \brief Default number of columns for fading traces
    */
-  static const uint32_t FADING_TRACE_DEFAULT_NUMBER_OF_COLUMNS = 2;
+  const uint32_t FADING_TRACE_DEFAULT_NUMBER_OF_COLUMNS = 2;
 
   /**
    * \brief Default sinr value index for composite sinr traces
    */
-  static const uint32_t CSINR_TRACE_DEFAULT_FADING_VALUE_INDEX = 1;
+  const uint32_t CSINR_TRACE_DEFAULT_FADING_VALUE_INDEX = 1;
 
   /**
    * \brief Default number of columns for composite sinr traces
    */
-  static const uint32_t CSINR_TRACE_DEFAULT_NUMBER_OF_COLUMNS = 2;
+  const uint32_t CSINR_TRACE_DEFAULT_NUMBER_OF_COLUMNS = 2;
 
   /**
    * \brief Constructor

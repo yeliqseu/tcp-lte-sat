@@ -802,7 +802,8 @@ SatHelper::FindMatchingDevice ( Ptr<NetDevice> devA, Ptr<Node> nodeB )
 
       Ipv4Address netAddressB = addressB.CombineMask (maskB);
 
-      if ( netAddressA.IsEqual (netAddressB))
+      //if ( netAddressA.IsEqual (netAddressB))
+      if ( netAddressA == netAddressB)
         {
           matchingDevice = nodeB->GetDevice (j);
         }
@@ -830,8 +831,10 @@ SatHelper::SetMulticastRouteToSourceNetwork (Ptr<Node> source, Ptr<Node> dest)
 
       for ( uint32_t i = 0; i < staticRouting->GetNRoutes (); i++ )
         {
-          if (staticRouting->GetRoute (i).GetDestNetwork ().IsEqual (defMulticastNetwork)
-              && staticRouting->GetRoute (i).GetDestNetworkMask ().IsEqual (defMulticastNetworkMask) )
+          //if (staticRouting->GetRoute (i).GetDestNetwork ().IsEqual (defMulticastNetwork)
+          //    && staticRouting->GetRoute (i).GetDestNetworkMask ().IsEqual (defMulticastNetworkMask) )
+          if (staticRouting->GetRoute (i).GetDestNetwork () == (defMulticastNetwork)
+              && staticRouting->GetRoute (i).GetDestNetworkMask () == (defMulticastNetworkMask) )
             {
               defaultMulticastRouteExists = true;
             }
