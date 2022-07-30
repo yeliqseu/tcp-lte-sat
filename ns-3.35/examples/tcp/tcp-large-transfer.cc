@@ -50,7 +50,7 @@ static uint32_t currentTxBytes = 0;
 // Perform series of 1040 byte writes (this is a multiple of 26 since
 // we want to detect data splicing in the output stream)
 static const uint32_t writeSize = 1040;
-uint8_t data[writeSize];
+uint8_t data_[writeSize];
 
 // These are for starting the writing process, and handling the sending 
 // socket's notification upcalls (events).  These two together more or less
@@ -82,7 +82,7 @@ int main (int argc, char *argv[])
   for(uint32_t i = 0; i < writeSize; ++i)
     {
       char m = toascii (97 + i % 26);
-      data[i] = m;
+      data_[i] = m;
     }
 
   // Here, we will explicitly create three nodes.  The first container contains
@@ -204,7 +204,7 @@ void WriteUntilBufferFull (Ptr<Socket> localSocket, uint32_t txSpace)
       uint32_t toWrite = writeSize - dataOffset;
       toWrite = std::min (toWrite, left);
       toWrite = std::min (toWrite, localSocket->GetTxAvailable ());
-      int amountSent = localSocket->Send (&data[dataOffset], toWrite, 0);
+      int amountSent = localSocket->Send (&data_[dataOffset], toWrite, 0);
       if(amountSent < 0)
         {
           // we will be called again when new tx space becomes available.
