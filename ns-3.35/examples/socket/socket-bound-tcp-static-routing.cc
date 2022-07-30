@@ -50,7 +50,7 @@ NS_LOG_COMPONENT_DEFINE ("SocketBoundTcpRoutingExample");
 static const uint32_t totalTxBytes = 20000;
 static uint32_t currentTxBytes = 0;
 static const uint32_t writeSize = 1040;
-uint8_t data[writeSize];
+uint8_t data1[writeSize];
 
 
 void StartFlow (Ptr<Socket>, Ipv4Address, uint16_t);
@@ -219,7 +219,7 @@ void WriteUntilBufferFull (Ptr<Socket> localSocket, uint32_t txSpace)
       uint32_t toWrite = writeSize - dataOffset;
       toWrite = std::min (toWrite, left);
       toWrite = std::min (toWrite, localSocket->GetTxAvailable ());
-      int amountSent = localSocket->Send (&data[dataOffset], toWrite, 0);
+      int amountSent = localSocket->Send (&data1[dataOffset], toWrite, 0);
       if(amountSent < 0)
         {
           // we will be called again when new tx space becomes available.
