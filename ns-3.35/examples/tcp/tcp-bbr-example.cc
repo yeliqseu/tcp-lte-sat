@@ -64,7 +64,7 @@
 using namespace ns3;
 
 std::string dir;
-uint32_t prev1 = 0;
+uint32_t prev = 0;
 Time prevTime = Seconds (0);
 
 // Calculate throughput
@@ -75,9 +75,9 @@ TraceThroughput (Ptr<FlowMonitor> monitor)
   auto itr = stats.begin ();
   Time curTime = Now ();
   std::ofstream thr (dir + "/throughput.dat", std::ios::out | std::ios::app);
-  thr <<  curTime << " " << 8 * (itr->second.txBytes - prev1) / (1000 * 1000 * (curTime.GetSeconds () - prevTime.GetSeconds ())) << std::endl;
+  thr <<  curTime << " " << 8 * (itr->second.txBytes - prev) / (1000 * 1000 * (curTime.GetSeconds () - prevTime.GetSeconds ())) << std::endl;
   prevTime = curTime;
-  prev1 = itr->second.txBytes;
+  prev = itr->second.txBytes;
   Simulator::Schedule (Seconds (0.2), &TraceThroughput, monitor);
 }
 
