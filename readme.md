@@ -1,18 +1,18 @@
 # 卫星模块导入方法
 ```
-$ git clone https://github.com/sns3/sns3-data.git satellite/data<br>
-$ git clone https://forge.net4sat.org/sns3/magister-traffic.git traffic<br>
-$ git clone https://forge.net4sat.org/sns3/magister-stats.git magister-stats<br>
-$ cd ns-3.35/contrib/satellite<br>
-$ git submodule update --init --recursive<br>
+$ git clone https://github.com/sns3/sns3-data.git satellite/data
+$ git clone https://forge.net4sat.org/sns3/magister-traffic.git traffic
+$ git clone https://forge.net4sat.org/sns3/magister-stats.git magister-stats
+$ cd ns-3.35/contrib/satellite
+$ git submodule update --init --recursive
 ```
 
 还需执行下述命令，即可运行脚本
 ```
-cd ns-3.35<br>
-./waf distclean<br>
-CXXFLAGS="-Wall" ./waf -d optimized --enable-examples --enable-tests --disable-python configure<br>
-./waf build -j 6<br>
+cd ns-3.35
+./waf distclean
+CXXFLAGS="-Wall" ./waf -d optimized --enable-examples --enable-tests --disable-python configure
+./waf build -j 6
 ```
 
 # 拓扑结构图
@@ -35,9 +35,11 @@ PCC的实现文件路径 -- src/internet/model/tcp-pcc.cc、tcp-pcc.h<br>
 &ensp;&ensp;&ensp;&ensp;2.udp (使用UDP回传服务器、客户端数据传输的场景)<br>
 &ensp;&ensp;&ensp;&ensp;3.http (使用3G HTTP服务器、客户端数据传输的场景)<br>
 3\) RandomPosition 
-如果设置为 true 时 , 用户随机分布于以基站位置中心的矩形区域内;
-    通过调整`Box (-3000 , 3000 , -3000 , 3000 , 1.5 , 2)`可调整矩形区域大小
-如果设置为 false 时 , 用户位置固定 ;
+如果设置为 true 时 , 用户随机分布于以基站位置中心的矩形区域内。通过下面命令调整矩形区域大小;
+```
+Box (-3000 , 3000 , -3000 , 3000 , 1.5 , 2)
+```
+如果设置为 false 时 , 用户位置固定 ;<br>
 ```
 Ptr<ListPositionAllocator> ue_positionAlloc = CreateObject<ListPositionAllocator>();
 ue_positionAlloc->Add(Vector(1000,1000,1.74)) ;
