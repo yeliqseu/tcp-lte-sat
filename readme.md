@@ -51,3 +51,10 @@ ue_positionAlloc->Add(Vector(4000 , 1000 , 1.74)) ;
 6\) Per_enb_ue_num 可以修改每个基站服务的用户个数<br>
 7\) eNodeB_num 可以调整基站的个数<br>
 8\) TcpVariant 后可接 TcpCopa 、 TcpCubic 、 TcpPcc 、 TcpBbr<br>
+
+# 文章发表
+下列论文的撰写使用了该模块：
+
+```
+S. Pan, R. Gao, Y. Hu, Y. Li, "TCP Performance in Satellite Backhauling for Maritime Communications: A ns-3 Study," in Proc. 14th Int. Conf. Wireless Commun. Signal Processing (WCSP 2022), 2022 (Accepted).
+```
