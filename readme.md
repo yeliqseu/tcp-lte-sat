@@ -55,6 +55,5 @@ ue_positionAlloc->Add(Vector(4000 , 1000 , 1.74)) ;
 # 文章发表
 下列论文的撰写使用了该模块：
 
-```
-S. Pan, R. Gao, Y. Hu, Y. Li, "TCP Performance in Satellite Backhauling for Maritime Communications: A ns-3 Study," in Proc. 14th Int. Conf. Wireless Commun. Signal Processing (WCSP 2022), 2022 (Accepted).
-```
+>S. Pan, R. Gao, Y. Hu and Y. Li, "TCP Performance in Satellite Backhauling for Maritime Communications: A ns-3 Study," 2022 14th International Conference on Wireless Communications and Signal Processing (WCSP), Nanjing, China, 2022, pp. 877-882, doi: 10.1109/WCSP55476.2022.10039046.
+
